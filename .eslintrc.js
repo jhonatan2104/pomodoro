@@ -17,14 +17,15 @@ module.exports = {
     },
     "plugins": [
         "react",
-        'prettier'
+        'prettier',
+        "markdown"
     ],
     "rules": {
         'prettier/prettier': 'error',
     'react/jsx-filename-extension': [
       'warn',
       {
-        extensions: ['.jsx', '.js']
+        extensions: ['.jsx', '.js', '.md']
       }
     ],
     'import/prefer-default-export': 'off',

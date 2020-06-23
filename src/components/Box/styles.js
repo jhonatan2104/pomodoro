@@ -1,5 +1,4 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable operator-linebreak */
+// /* eslint-disable prettier/prettier */
 import styled, { css } from 'styled-components/native';
 
 const getAlignItems = (alignStart, alignCenter) => {
@@ -11,7 +10,7 @@ const getJustifyItems = (
   justifyStart,
   justifyCenter,
   justifyBetween,
-  justifyAround,
+  justifyAround
 ) => {
   if (justifyStart) return 'flex-start';
   if (justifyCenter) return 'center';
@@ -65,7 +64,7 @@ export const Container = styled.View`
       justifyStart,
       justifyCenter,
       justifyBetween,
-      justifyAround,
+      justifyAround
     );
   }};
 

@@ -36,6 +36,8 @@ module.exports = {
     "camelcase":"error",
     // 'no-param-reassign': 'off',
     'no-console': 'off',
-    "arrow-body-style":"off"
+    "arrow-body-style":"off",
+    "operator-linebreak":"off",
+    "comma-dangle": 'off'
     }
 };

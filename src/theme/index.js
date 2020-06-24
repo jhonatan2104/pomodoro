@@ -1,5 +1,11 @@
 export default {
-  colors: {},
+  colors: {
+    navigation: {
+      bg: '#373737',
+      active: '#6D7CFF',
+      inactive: '#5F5F5F',
+    },
+  },
   roundness: {
     xs: 4,
     sm: 8,

@@ -20,6 +20,14 @@ module.exports = {
         'prettier',
         "markdown"
     ],
+    "settings": {
+        "import/resolver": {
+          "babel-plugin-root-import": {
+            "rootPathPrefix": "~",
+            "rootPathSuffix": "src"
+          }
+        }
+    },
     "rules": {
         'prettier/prettier': 'error',
     'react/jsx-filename-extension': [

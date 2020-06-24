@@ -40,7 +40,7 @@ module.exports = {
     'react/state-in-constructor': 'off',
     'react/static-property-placement': 'off',
     'react/jsx-props-no-spreading': 'off',
-    // 'react/prop-types': 'off',
+    'react/prop-types': 'off',
     "camelcase":"error",
     // 'no-param-reassign': 'off',
     'no-console': 'off',

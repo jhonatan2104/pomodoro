@@ -1,16 +1,9 @@
 import styled, { css } from 'styled-components/native';
 
+import theme from '~/theme';
+
 export const Container = styled.TouchableOpacity`
-  ${({ backgroundColor }) => {
-    return (
-      !!backgroundColor &&
-      css`
-        background-color: ${backgroundColor};
-      `
-    );
-  }}
-
-
+  
   ${({ paddingHorizontal }) => {
     return (
       !!paddingHorizontal &&
@@ -28,8 +21,16 @@ export const Container = styled.TouchableOpacity`
       `
     );
   }}
+
+  ${({ backgroundColor }) => {
+    return (
+      !!backgroundColor &&
+      css`
+        background-color: ${backgroundColor};
+      `
+    );
+  }}
   
-  align-items: center;
-  justify-content: center;
-  border-radius: 8;
+
+  border-radius: ${theme.roundness.sm};
 `;

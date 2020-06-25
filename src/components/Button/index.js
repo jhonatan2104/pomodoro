@@ -1,20 +1,29 @@
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container } from './styles';
+import Label from '../Label';
 
-const Button = (prop) => {
-  return <Container {...prop} />;
+const Button = (props) => {
+  return (
+    <Container {...props}>
+      <Label color={props.color}>{props.children}</Label>
+    </Container>
+  );
 };
 
 Button.propTypes = {
-  size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  align: PropTypes.oneOf(['auto', 'left', 'right', 'center', 'justify']),
+  backgroundColor: PropTypes.oneOfType([PropTypes.string]),
   color: PropTypes.oneOfType([PropTypes.string]),
+  paddingHorizontal: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  paddingVertical: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
+
 Button.defaultProps = {
-  size: 100,
-  align: 'center',
-  color: '#6D7CFF',
+  backgroundColor: '#6D7CFF',
+  color: '#fff',
+  paddingHorizontal: '48',
+  paddingVertical: '16',
 };
 
 export default Button;

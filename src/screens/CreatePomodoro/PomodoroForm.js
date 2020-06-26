@@ -11,7 +11,7 @@ import {
 import { Formik } from 'formik';
 
 const styles = StyleSheet.create({
-  button: {
+  AddPomodoroBtn: {
     position: 'absolute',
     alignSelf: 'center',
     bottom: 8,
@@ -23,20 +23,34 @@ const styles = StyleSheet.create({
     padding: 24,
     borderRadius: 8,
   },
-  text: {
+  textAddPomodoroBtn: {
     color: 'white',
   },
   capsule: {
     width: '100%',
     height: '100%',
+    backgroundColor: '#2D2D2D',
   },
-  input: {
-    marginTop: 200,
-    borderWidth: 1,
-    borderColor: '#ddd',
-    padding: 10,
+  inputName: {
+    color: 'white',
+    padding: 8,
     fontSize: 18,
     borderRadius: 6,
+    backgroundColor: '#46494D',
+    width: '80%',
+    alignSelf: 'center',
+  },
+  textName: {
+    color: 'white',
+    fontSize: 16,
+    marginLeft: '10%',
+    marginTop: '20%',
+  },
+  textWorkInterval: {
+    color: 'white',
+    fontSize: 16,
+    marginLeft: '10%',
+    marginTop: 16,
   },
 });
 
@@ -46,38 +60,64 @@ export default function PomodoroForm() {
       <Formik
         initialValues={{
           name: '',
+          minWorkInterval: 25,
+          secWorkInterval: 0,
+          shortInterval: 5,
+          longInterval: 15,
+          cicleSize: 4,
         }}
         onSubmit={(values) => {
           console.log(values);
         }}
       >
-        {(formikProps) => (
+        {(props) => (
           <View style={styles.capsule}>
-            <TextInput
-              style={styles.input}
-              onChange={formikProps.handleChange('name')}
-              value={formikProps.values.name}
-            />
+            <View>
+              <Text style={styles.textName}>Name:</Text>
+              <TextInput
+                style={styles.inputName}
+                onChangeText={props.handleChange('name')}
+              />
+            </View>
 
-            <TextInput
-              style={{
-                borderWidth: 1,
-                borderColor: '#ddd',
-                padding: 10,
-                fontSize: 18,
-                borderRadius: 6,
-              }}
-              onChange={formikProps.handleChange('name')}
-              value={formikProps.values.name}
-              keyboardType="numeric"
-            />
+            <View>
+              <Text style={styles.textWorkInterval}>Work Interval:</Text>
+              <View style={{ flexDirection: 'row' }}>
+                <TextInput
+                  style={{
+                    color: 'white',
+                    backgroundColor: '#46494D',
+                    padding: 8,
+                    fontSize: 18,
+                    borderRadius: 6,
+                    width: 16,
+                    marginLeft: '10%',
+                  }}
+                  onChangeText={props.handleChange('minWorkInterval')}
+                  keyboardType="numeric"
+                />
+                <TextInput
+                  style={{
+                    color: 'white',
+                    backgroundColor: '#46494D',
+                    padding: 8,
+                    fontSize: 18,
+                    borderRadius: 6,
+                    width: 48,
+                    marginLeft: 16,
+                  }}
+                  onChangeText={props.handleChange('secWorkInterval')}
+                  keyboardType="numeric"
+                />
+              </View>
+            </View>
 
             <TouchableOpacity
-              style={styles.button}
-              onPress={formikProps.handleSubmit}
+              style={styles.AddPomodoroBtn}
+              onPress={props.handleSubmit}
               activeOpacity={0.7}
             >
-              <Text style={styles.text}>Save pomodoro</Text>
+              <Text style={styles.textAddPomodoroBtn}>Save pomodoro</Text>
             </TouchableOpacity>
           </View>
         )}

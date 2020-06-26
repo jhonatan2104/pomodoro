@@ -1,15 +1,18 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
-  flex: 1;
+import { Button as ButtonComponent } from '~/components';
 
-  justify-content: flex-end;
+export const Button = styled(ButtonComponent)`
   margin: auto;
 
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 `;
 
 export const Wrapper = styled.View`
   flex: 1;
   background-color: #2d2d2d;
+`;
+
+export const PomodorosList = styled.ScrollView`
+  margin: 16px 8px;
 `;

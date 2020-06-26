@@ -18,6 +18,7 @@ const PomodoroItem = ({ ml, mb, mt, mr }) => {
     <Box
       roundedSm
       row
+      height={80}
       mt={mt}
       mb={mb}
       ml={ml}
@@ -34,7 +35,7 @@ const PomodoroItem = ({ ml, mb, mt, mr }) => {
             {pomodoro.name}
           </Label>
           <Label color="#fff" size={16}>
-            {`${pomodoro.timeCount}minutes`}
+            {`${pomodoro.timeCount} minutes`}
           </Label>
         </Container>
       </Wrapper>

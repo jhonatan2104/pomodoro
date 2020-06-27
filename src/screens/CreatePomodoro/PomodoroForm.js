@@ -2,10 +2,10 @@ import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import {
   TextInput,
-  View,
   TouchableOpacity,
   StyleSheet,
   Text,
+  View,
 } from 'react-native';
 
 import { Formik } from 'formik';
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     backgroundColor: '#46494D',
     width: '80%',
-    alignSelf: 'center',
+    marginLeft: '10%',
   },
   textName: {
     color: 'white',

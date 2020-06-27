@@ -33,7 +33,7 @@ Engenharia de Computação - IFPB</p></td>
 Engenharia de Computação - IFPB</p></td>
 
 <td align="center"><a href="https://github.com/HailKing"><img src="https://avatars1.githubusercontent.com/u/49170152?s=400&u=76eb45e9504e41bd9da8ff8f9116cc121c01f758&v=4" height="auto" width="120" style="border-radius:50%"></a>
-<h3>LHércules de Sousa</h3>
+<h3>Hércules de Sousa</h3>
 <p>Desenvolvedor<br>Graduando em   
 Engenharia de Computação - IFPB</p></td>
 

@@ -4,82 +4,9 @@ import { StatusBar } from 'react-native';
 import PomodoroItem from '~/components/PomodoroItem';
 import { Button, Wrapper, PomodorosList } from './styles';
 
-const PomodoroList = ({ navigation }) => {
-  const mockPomodoros = [
-    {
-      name: 'Pomodoro name',
-      config: {
-        focusSize: 20,
-        cicleSize: 4,
-        timeCount: 60,
-      },
-    },
-    {
-      name: 'Pomodoro name',
-      config: {
-        focusSize: 20,
-        cicleSize: 4,
-        timeCount: 60,
-      },
-    },
-    {
-      name: 'Pomodoro name',
-      config: {
-        focusSize: 20,
-        cicleSize: 4,
-        timeCount: 60,
-      },
-    },
-    {
-      name: 'Pomodoro name',
-      config: {
-        focusSize: 20,
-        cicleSize: 4,
-        timeCount: 60,
-      },
-    },
-    {
-      name: 'Pomodoro name',
-      config: {
-        focusSize: 20,
-        cicleSize: 4,
-        timeCount: 60,
-      },
-    },
-    {
-      name: 'Pomodoro name',
-      config: {
-        focusSize: 20,
-        cicleSize: 4,
-        timeCount: 60,
-      },
-    },
-    {
-      name: 'Pomodoro name',
-      config: {
-        focusSize: 20,
-        cicleSize: 4,
-        timeCount: 60,
-      },
-    },
-    {
-      name: 'Pomodoro name',
-      config: {
-        focusSize: 20,
-        cicleSize: 4,
-        timeCount: 60,
-      },
-    },
-    {
-      name: 'Pomodoro name',
-      config: {
-        focusSize: 20,
-        cicleSize: 4,
-        timeCount: 60,
-      },
-    },
-  ];
+import mockPomodoros from '~/mock/pomodoros.json';
 
+const PomodoroList = ({ navigation }) => {
   return (
     <>
       <StatusBar barStyle="light-content" />

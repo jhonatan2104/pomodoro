@@ -22,6 +22,7 @@ const PomodoroList = ({ navigation }) => {
         </PomodorosList>
 
         <Button
+          mode="light"
           onPress={() => {
             navigation.navigate('CreatePomodoro');
           }}

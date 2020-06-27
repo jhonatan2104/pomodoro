@@ -11,7 +11,14 @@ export default {
       green: '#0DBF69',
     },
     button: {
-      primary: '#6D7CFF',
+      dark: {
+        bg: '#37394C',
+        color: '#4760B5',
+      },
+      light: {
+        bg: '#6D7CFF',
+        color: '#fff',
+      },
     },
   },
   roundness: {

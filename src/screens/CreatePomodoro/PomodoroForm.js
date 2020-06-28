@@ -52,6 +52,15 @@ const styles = StyleSheet.create({
     marginLeft: '10%',
     marginTop: 16,
   },
+  workIntervalInputs: {
+    color: 'white',
+    backgroundColor: '#46494D',
+    padding: 8,
+    fontSize: 16,
+    borderRadius: 6,
+    width: 16,
+    marginLeft: '10%',
+  },
 });
 
 export default function PomodoroForm() {
@@ -84,28 +93,12 @@ export default function PomodoroForm() {
               <Text style={styles.textWorkInterval}>Work Interval:</Text>
               <View style={{ flexDirection: 'row' }}>
                 <TextInput
-                  style={{
-                    color: 'white',
-                    backgroundColor: '#46494D',
-                    padding: 8,
-                    fontSize: 18,
-                    borderRadius: 6,
-                    width: 16,
-                    marginLeft: '10%',
-                  }}
+                  style={styles.workIntervalInputs}
                   onChangeText={props.handleChange('minWorkInterval')}
                   keyboardType="numeric"
                 />
                 <TextInput
-                  style={{
-                    color: 'white',
-                    backgroundColor: '#46494D',
-                    padding: 8,
-                    fontSize: 18,
-                    borderRadius: 6,
-                    width: 48,
-                    marginLeft: 16,
-                  }}
+                  style={styles.workIntervalInputs}
                   onChangeText={props.handleChange('secWorkInterval')}
                   keyboardType="numeric"
                 />

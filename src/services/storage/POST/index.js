@@ -6,6 +6,8 @@ export default function ({ type, payload }) {
     case CREATE_POMODORO:
       return Controllers.createPomodoro({ payload });
     default:
-      return () => console.error('CODE ERRO/STORAGE/POST');
+      return new Promise((resolve, reject) => {
+        reject(new Error('ACTION ERRO/STORAGE/POST'));
+      });
   }
 }

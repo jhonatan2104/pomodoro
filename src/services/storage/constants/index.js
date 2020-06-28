@@ -1,0 +1,3 @@
+export const TABLE_POMODORO = 'TABLE_POMODORO';
+
+export const CREATE_POMODORO = 'CREATE_POMODORO';

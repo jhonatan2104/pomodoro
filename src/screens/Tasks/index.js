@@ -1,15 +1,22 @@
 import React from 'react';
-import { View } from 'react-native';
 
+import { StatusBar } from 'react-native';
 import Task from '~/components/Task';
 
-// import { Container } from './styles';
+import { Wrapper, TaskList } from './styles';
 
 const Tasks = () => {
   return (
-    <View style={{ backgroundColor: '#2d2d2d', flex: 1 }}>
-      <Task />
-    </View>
+    <>
+      <StatusBar barStyle="light-content" />
+      <Wrapper>
+        <TaskList showsVerticalScrollIndicator={false}>
+          {[1, 2, 3, 4, 1, 1, 1, 1].map((item, index) => (
+            <Task mt={index && 16} />
+          ))}
+        </TaskList>
+      </Wrapper>
+    </>
   );
 };
 

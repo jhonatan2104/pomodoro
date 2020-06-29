@@ -4,6 +4,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import PropTypes from 'prop-types';
 import { Box, Label } from '..';
 import { Container, Configs, Wrapper } from './styles';
+import theme from '~/theme';
 
 const PomodoroItem = ({ ml, mb, mt, mr }) => {
   const pomodoro = {
@@ -24,7 +25,7 @@ const PomodoroItem = ({ ml, mb, mt, mr }) => {
       ml={ml}
       mr={mr}
       justifyBetween
-      bg="#5D676F40"
+      bg={theme.colors.components.primary}
       paddingVertical={16}
       paddingHorizontal={12}
     >

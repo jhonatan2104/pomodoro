@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-
+import LabelComponent from '../Label';
 import theme from '~/theme';
 
 export const Container = styled.TouchableOpacity`
@@ -22,15 +22,37 @@ export const Container = styled.TouchableOpacity`
     );
   }}
 
-  ${({ backgroundColor }) => {
+  border-radius: ${theme.roundness.sm}px;
+
+  background-color: ${({ mode }) => {
+    return mode === 'dark'
+      ? theme.colors.button.dark.bg
+      : theme.colors.button.light.bg;
+  }};
+
+  ${({ height }) => {
     return (
-      !!backgroundColor &&
+      !!height &&
       css`
-        background-color: ${backgroundColor};
+        height: ${height}px;
       `
     );
   }}
-  
 
-  border-radius: ${theme.roundness.sm};
+  ${({ width }) => {
+    return (
+      !!width &&
+      css`
+        width: ${width}px;
+      `
+    );
+  }}
+`;
+
+export const Label = styled(LabelComponent)`
+  color: ${({ mode }) => {
+    return mode === 'dark'
+      ? theme.colors.button.dark.color
+      : theme.colors.button.light.color;
+  }};
 `;

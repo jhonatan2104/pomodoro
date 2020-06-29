@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
-import { v4 as uuidv4 } from 'uuid';
+import { v1 as uuidv1 } from 'uuid';
 import { read, write } from '../../utils';
-import { validationPropPomodoro } from './utils';
+import { validationPropPomodoro, v1options } from './utils';
 import { TABLE_POMODORO } from '~/services/storage/constants';
 
 const createPomodoro = ({ payload }) => {
@@ -11,7 +11,7 @@ const createPomodoro = ({ payload }) => {
       read({
         TABLE: TABLE_POMODORO,
       }).then((data) => {
-        const id_pomodoro = uuidv4();
+        const id_pomodoro = uuidv1(v1options);
         if (data) {
           data.set(id_pomodoro, { ...pomodoro, id: id_pomodoro });
           write({

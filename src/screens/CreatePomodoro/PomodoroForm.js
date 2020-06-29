@@ -1,7 +1,7 @@
 /* eslint-disable object-curly-newline */
 import React from 'react';
 import { TextInput, TouchableOpacity, StyleSheet, Text } from 'react-native';
-import { Formik } from 'formik';
+import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { Box } from '../../components';
 
@@ -74,26 +74,32 @@ const styles = StyleSheet.create({
 });
 
 const validationSchema = yup.object({
-  name: yup.string().required(),
-  workIntervalMin: yup.number().required().integer(),
+  name: yup.string().required('Name missing'),
+  workIntervalMin: yup.number().required().integer('Number must be an integer'),
   workIntervalSec: yup
     .number()
     .required()
-    .lessThan(60, 'Number must be less than 60 secs')
-    .integer(),
-  shortIntervalMin: yup.number().required().integer(),
+    .lessThan(60, 'Seconds must be less than 60')
+    .integer('Number must be an integer'),
+  shortIntervalMin: yup
+    .number()
+    .required()
+    .integer('Number must be an integer'),
   shortIntervalSec: yup
     .number()
     .required()
-    .lessThan(60, 'Number must be less than 60 secs')
-    .integer(),
-  longIntervalMin: yup.number().required().integer(),
+    .lessThan(60, 'Seconds must be less than 60')
+    .integer('Number must be an integer'),
+  longIntervalMin: yup.number().required().integer('Number must be an integer'),
   longIntervalSec: yup
     .number()
     .required()
-    .lessThan(60, 'Number must be less than 60 secs')
-    .integer(),
-  cicleSize: yup.number().required().integer(),
+    .lessThan(60, 'Seconds must be less than 60')
+    .integer('Number must be an integer'),
+  cicleSize: yup
+    .number()
+    .required()
+    .integer('Number of cicles must be an integer'),
 });
 
 export default function PomodoroForm() {
@@ -122,6 +128,14 @@ export default function PomodoroForm() {
               <TextInput
                 style={styles.inputName}
                 onChangeText={props.handleChange('name')}
+              />
+              <ErrorMessage
+                name="name"
+                render={(messageError) => (
+                  <Text style={{ marginLeft: '10%', color: 'red' }}>
+                    {messageError}
+                  </Text>
+                )}
               />
             </Box>
 
@@ -160,6 +174,39 @@ export default function PomodoroForm() {
               </Box>
             </Box>
 
+            <ErrorMessage
+              name="workIntervalMin"
+              render={(messageError) => (
+                <Text style={{ marginLeft: '10%', color: 'red' }}>
+                  {messageError}
+                </Text>
+              )}
+            />
+            <ErrorMessage
+              name="workIntervalSec"
+              render={(messageError) => (
+                <Text style={{ marginLeft: '10%', color: 'red' }}>
+                  {messageError}
+                </Text>
+              )}
+            />
+            <ErrorMessage
+              name="shortIntervalMin"
+              render={(messageError) => (
+                <Text style={{ marginLeft: '10%', color: 'red' }}>
+                  {messageError}
+                </Text>
+              )}
+            />
+            <ErrorMessage
+              name="shortIntervalSec"
+              render={(messageError) => (
+                <Text style={{ marginLeft: '10%', color: 'red' }}>
+                  {messageError}
+                </Text>
+              )}
+            />
+
             <Box
               style={{
                 flexDirection: 'row',
@@ -189,6 +236,31 @@ export default function PomodoroForm() {
                 />
               </Box>
             </Box>
+
+            <ErrorMessage
+              name="longIntervalMin"
+              render={(messageError) => (
+                <Text style={{ marginLeft: '10%', color: 'red' }}>
+                  {messageError}
+                </Text>
+              )}
+            />
+            <ErrorMessage
+              name="longIntervalSec"
+              render={(messageError) => (
+                <Text style={{ marginLeft: '10%', color: 'red' }}>
+                  {messageError}
+                </Text>
+              )}
+            />
+            <ErrorMessage
+              name="cicleSize"
+              render={(messageError) => (
+                <Text style={{ marginLeft: '10%', color: 'red' }}>
+                  {messageError}
+                </Text>
+              )}
+            />
 
             <TouchableOpacity
               style={styles.AddPomodoroBtn}

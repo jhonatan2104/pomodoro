@@ -1,14 +1,9 @@
+/* eslint-disable object-curly-newline */
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
-import {
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
-
+import { TextInput, TouchableOpacity, StyleSheet, Text } from 'react-native';
 import { Formik } from 'formik';
+import * as yup from 'yup';
+import { Box } from '../../components';
 
 const styles = StyleSheet.create({
   AddPomodoroBtn: {
@@ -52,6 +47,12 @@ const styles = StyleSheet.create({
     marginLeft: '10%',
     marginTop: 16,
   },
+  textShortInterval: {
+    color: 'white',
+    fontSize: 16,
+    marginLeft: '20%',
+    marginTop: 16,
+  },
   workIntervalInputs: {
     color: 'white',
     backgroundColor: '#46494D',
@@ -61,49 +62,133 @@ const styles = StyleSheet.create({
     width: 16,
     marginLeft: '10%',
   },
+  cicleIntervalInput: {
+    color: 'white',
+    backgroundColor: '#46494D',
+    padding: 8,
+    fontSize: 16,
+    borderRadius: 6,
+    width: 48,
+    marginLeft: '10%',
+  },
+});
+
+const validationSchema = yup.object({
+  name: yup.string().required(),
+  workIntervalMin: yup.number().required().integer(),
+  workIntervalSec: yup
+    .number()
+    .required()
+    .lessThan(60, 'Number must be less than 60 secs')
+    .integer(),
+  shortIntervalMin: yup.number().required().integer(),
+  shortIntervalSec: yup
+    .number()
+    .required()
+    .lessThan(60, 'Number must be less than 60 secs')
+    .integer(),
+  longIntervalMin: yup.number().required().integer(),
+  longIntervalSec: yup
+    .number()
+    .required()
+    .lessThan(60, 'Number must be less than 60 secs')
+    .integer(),
+  cicleSize: yup.number().required().integer(),
 });
 
 export default function PomodoroForm() {
   return (
-    <View>
+    <Box>
       <Formik
         initialValues={{
           name: '',
-          minWorkInterval: 25,
-          secWorkInterval: 0,
-          shortInterval: 5,
-          longInterval: 15,
+          workIntervalMin: 25,
+          workIntervalSec: 0,
+          shortIntervalMin: 5,
+          shortIntervalSec: 0,
+          longIntervalMin: 15,
+          longIntervalSec: 0,
           cicleSize: 4,
         }}
+        validationSchema={validationSchema}
         onSubmit={(values) => {
           console.log(values);
         }}
       >
         {(props) => (
-          <View style={styles.capsule}>
-            <View>
+          <Box style={styles.capsule}>
+            <Box style={{ width: '100%' }}>
               <Text style={styles.textName}>Name:</Text>
               <TextInput
                 style={styles.inputName}
                 onChangeText={props.handleChange('name')}
               />
-            </View>
+            </Box>
 
-            <View>
+            <Box
+              style={{
+                flexDirection: 'row',
+                width: '100%',
+              }}
+            >
               <Text style={styles.textWorkInterval}>Work Interval:</Text>
-              <View style={{ flexDirection: 'row' }}>
+              <Text style={styles.textShortInterval}>Short Interval:</Text>
+            </Box>
+
+            <Box>
+              <Box style={{ flexDirection: 'row' }}>
                 <TextInput
                   style={styles.workIntervalInputs}
-                  onChangeText={props.handleChange('minWorkInterval')}
+                  onChangeText={props.handleChange('workIntervalMin')}
                   keyboardType="numeric"
                 />
                 <TextInput
                   style={styles.workIntervalInputs}
-                  onChangeText={props.handleChange('secWorkInterval')}
+                  onChangeText={props.handleChange('workIntervalSec')}
                   keyboardType="numeric"
                 />
-              </View>
-            </View>
+                <TextInput
+                  style={styles.workIntervalInputs}
+                  onChangeText={props.handleChange('shortIntervalMin')}
+                  keyboardType="numeric"
+                />
+                <TextInput
+                  style={styles.workIntervalInputs}
+                  onChangeText={props.handleChange('shortIntervalSec')}
+                  keyboardType="numeric"
+                />
+              </Box>
+            </Box>
+
+            <Box
+              style={{
+                flexDirection: 'row',
+                width: '100%',
+              }}
+            >
+              <Text style={styles.textWorkInterval}>Long Interval:</Text>
+              <Text style={styles.textShortInterval}>Cicle Size:</Text>
+            </Box>
+
+            <Box>
+              <Box style={{ flexDirection: 'row' }}>
+                <TextInput
+                  style={styles.workIntervalInputs}
+                  onChangeText={props.handleChange('longIntervalMin')}
+                  keyboardType="numeric"
+                />
+                <TextInput
+                  style={styles.workIntervalInputs}
+                  onChangeText={props.handleChange('longIntervalSec')}
+                  keyboardType="numeric"
+                />
+                <TextInput
+                  style={styles.cicleIntervalInput}
+                  onChangeText={props.handleChange('cicleSize')}
+                  keyboardType="numeric"
+                />
+              </Box>
+            </Box>
 
             <TouchableOpacity
               style={styles.AddPomodoroBtn}
@@ -112,9 +197,9 @@ export default function PomodoroForm() {
             >
               <Text style={styles.textAddPomodoroBtn}>Save pomodoro</Text>
             </TouchableOpacity>
-          </View>
+          </Box>
         )}
       </Formik>
-    </View>
+    </Box>
   );
 }

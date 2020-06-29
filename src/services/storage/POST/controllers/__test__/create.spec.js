@@ -4,7 +4,12 @@ import { read } from '../../../utils';
 
 const OBJECT_POMODORO = {
   name: 'name',
-  config: {},
+  config: {
+    duration: 5,
+    long_inteval: 4,
+    short_inteval: 2,
+    cicle_size: 6,
+  },
   log: {},
   icon: '',
 };

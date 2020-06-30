@@ -2,8 +2,8 @@
 import React from 'react';
 import { TextInput, TouchableOpacity, StyleSheet, Text } from 'react-native';
 import { Formik, ErrorMessage } from 'formik';
-import * as yup from 'yup';
 import { Box } from '../../components';
+import validationSchema from './verifications';
 
 const styles = StyleSheet.create({
   AddPomodoroBtn: {
@@ -71,35 +71,6 @@ const styles = StyleSheet.create({
     width: 48,
     marginLeft: '10%',
   },
-});
-
-const validationSchema = yup.object({
-  name: yup.string().required('Name missing'),
-  workIntervalMin: yup.number().required().integer('Number must be an integer'),
-  workIntervalSec: yup
-    .number()
-    .required()
-    .lessThan(60, 'Seconds must be less than 60')
-    .integer('Number must be an integer'),
-  shortIntervalMin: yup
-    .number()
-    .required()
-    .integer('Number must be an integer'),
-  shortIntervalSec: yup
-    .number()
-    .required()
-    .lessThan(60, 'Seconds must be less than 60')
-    .integer('Number must be an integer'),
-  longIntervalMin: yup.number().required().integer('Number must be an integer'),
-  longIntervalSec: yup
-    .number()
-    .required()
-    .lessThan(60, 'Seconds must be less than 60')
-    .integer('Number must be an integer'),
-  cicleSize: yup
-    .number()
-    .required()
-    .integer('Number of cicles must be an integer'),
 });
 
 export default function PomodoroForm() {

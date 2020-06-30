@@ -1,77 +1,10 @@
 /* eslint-disable object-curly-newline */
 import React from 'react';
-import { TextInput, TouchableOpacity, StyleSheet, Text } from 'react-native';
+import { TextInput, TouchableOpacity, Text } from 'react-native';
 import { Formik, ErrorMessage } from 'formik';
 import { Box } from '../../components';
 import validationSchema from './verifications';
-
-const styles = StyleSheet.create({
-  AddPomodoroBtn: {
-    position: 'absolute',
-    alignSelf: 'center',
-    bottom: 8,
-    height: 16,
-    width: 160,
-    backgroundColor: '#6D7CFF',
-    justifyContent: 'center',
-    alignContent: 'center',
-    padding: 24,
-    borderRadius: 8,
-  },
-  textAddPomodoroBtn: {
-    color: 'white',
-  },
-  capsule: {
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#2D2D2D',
-  },
-  inputName: {
-    color: 'white',
-    padding: 8,
-    fontSize: 18,
-    borderRadius: 6,
-    backgroundColor: '#46494D',
-    width: '80%',
-    marginLeft: '10%',
-  },
-  textName: {
-    color: 'white',
-    fontSize: 16,
-    marginLeft: '10%',
-    marginTop: '20%',
-  },
-  textWorkInterval: {
-    color: 'white',
-    fontSize: 16,
-    marginLeft: '10%',
-    marginTop: 16,
-  },
-  textShortInterval: {
-    color: 'white',
-    fontSize: 16,
-    marginLeft: '20%',
-    marginTop: 16,
-  },
-  workIntervalInputs: {
-    color: 'white',
-    backgroundColor: '#46494D',
-    padding: 8,
-    fontSize: 16,
-    borderRadius: 6,
-    width: 16,
-    marginLeft: '10%',
-  },
-  cicleIntervalInput: {
-    color: 'white',
-    backgroundColor: '#46494D',
-    padding: 8,
-    fontSize: 16,
-    borderRadius: 6,
-    width: 48,
-    marginLeft: '10%',
-  },
-});
+import styles from './styles';
 
 export default function PomodoroForm() {
   return (
@@ -103,9 +36,7 @@ export default function PomodoroForm() {
               <ErrorMessage
                 name="name"
                 render={(messageError) => (
-                  <Text style={{ marginLeft: '10%', color: 'red' }}>
-                    {messageError}
-                  </Text>
+                  <Text style={styles.textMessageError}>{messageError}</Text>
                 )}
               />
             </Box>
@@ -126,21 +57,25 @@ export default function PomodoroForm() {
                   style={styles.workIntervalInputs}
                   onChangeText={props.handleChange('workIntervalMin')}
                   keyboardType="numeric"
+                  placeholder="Min"
                 />
                 <TextInput
                   style={styles.workIntervalInputs}
                   onChangeText={props.handleChange('workIntervalSec')}
                   keyboardType="numeric"
+                  placeholder="Sec"
                 />
                 <TextInput
                   style={styles.workIntervalInputs}
                   onChangeText={props.handleChange('shortIntervalMin')}
                   keyboardType="numeric"
+                  placeholder="Min"
                 />
                 <TextInput
                   style={styles.workIntervalInputs}
                   onChangeText={props.handleChange('shortIntervalSec')}
                   keyboardType="numeric"
+                  placeholder="Sec"
                 />
               </Box>
             </Box>
@@ -148,9 +83,7 @@ export default function PomodoroForm() {
             <ErrorMessage
               name="workIntervalMin"
               render={(messageError) => (
-                <Text style={{ marginLeft: '10%', color: 'red' }}>
-                  {messageError}
-                </Text>
+                <Text style={styles.textMessageError}>{messageError}</Text>
               )}
             />
             <ErrorMessage
@@ -164,17 +97,13 @@ export default function PomodoroForm() {
             <ErrorMessage
               name="shortIntervalMin"
               render={(messageError) => (
-                <Text style={{ marginLeft: '10%', color: 'red' }}>
-                  {messageError}
-                </Text>
+                <Text style={styles.textMessageError}>{messageError}</Text>
               )}
             />
             <ErrorMessage
               name="shortIntervalSec"
               render={(messageError) => (
-                <Text style={{ marginLeft: '10%', color: 'red' }}>
-                  {messageError}
-                </Text>
+                <Text style={styles.textMessageError}>{messageError}</Text>
               )}
             />
 
@@ -194,11 +123,13 @@ export default function PomodoroForm() {
                   style={styles.workIntervalInputs}
                   onChangeText={props.handleChange('longIntervalMin')}
                   keyboardType="numeric"
+                  placeholder="Min"
                 />
                 <TextInput
                   style={styles.workIntervalInputs}
                   onChangeText={props.handleChange('longIntervalSec')}
                   keyboardType="numeric"
+                  placeholder="Sec"
                 />
                 <TextInput
                   style={styles.cicleIntervalInput}
@@ -211,25 +142,19 @@ export default function PomodoroForm() {
             <ErrorMessage
               name="longIntervalMin"
               render={(messageError) => (
-                <Text style={{ marginLeft: '10%', color: 'red' }}>
-                  {messageError}
-                </Text>
+                <Text style={styles.textMessageError}>{messageError}</Text>
               )}
             />
             <ErrorMessage
               name="longIntervalSec"
               render={(messageError) => (
-                <Text style={{ marginLeft: '10%', color: 'red' }}>
-                  {messageError}
-                </Text>
+                <Text style={styles.textMessageError}>{messageError}</Text>
               )}
             />
             <ErrorMessage
               name="cicleSize"
               render={(messageError) => (
-                <Text style={{ marginLeft: '10%', color: 'red' }}>
-                  {messageError}
-                </Text>
+                <Text style={styles.textMessageError}>{messageError}</Text>
               )}
             />
 

@@ -1,13 +1,15 @@
 import React from 'react';
+import { StatusBar, View } from 'react-native';
+import PomodoroForm from './PomodoroForm';
 
-import { Box, Label } from '~/components';
-import theme from '~/theme';
+// import { Container } from './styles';
 
 const CreatePomodoro = () => {
   return (
-    <Box bg={theme.colors.navigation.bg} flexGrow={1}>
-      <Label>Hello</Label>
-    </Box>
+    <View>
+      <StatusBar translucent barStyle="light-content" />
+      <PomodoroForm />
+    </View>
   );
 };
 

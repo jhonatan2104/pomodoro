@@ -15,6 +15,7 @@ import Tasks from '~/screens/Tasks';
 import Time from '~/screens/Time';
 import Graphic from '~/screens/Graphic';
 import Home from '~/screens/Home';
+import CreatePomodoro from '~/screens/CreatePomodoro';
 
 const Tab = createBottomTabNavigator();
 
@@ -54,7 +55,7 @@ const Routers = ({ theme }) => {
           },
         }}
       >
-        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Home" component={CreatePomodoro} />
         <Tab.Screen name="Time" component={Time} />
         <Tab.Screen name="Graphic" component={Graphic} />
         <Tab.Screen name="Tasks" component={Tasks} />

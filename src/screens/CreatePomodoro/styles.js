@@ -73,3 +73,9 @@ const styles = StyleSheet.create({
 });
 
 export default styles;
+
+/*
+import styled from 'styled-components/native';
+
+export const Container = styled.View``;
+*/

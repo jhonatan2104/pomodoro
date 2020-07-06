@@ -1,17 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  AddPomodoroBtn: {
+  addPomodoroBtn: {
     position: 'absolute',
-    alignSelf: 'center',
     bottom: 8,
-    height: 16,
-    width: 160,
-    backgroundColor: '#6D7CFF',
-    justifyContent: 'center',
-    alignContent: 'center',
-    padding: 24,
-    borderRadius: 8,
+    alignSelf: 'center',
   },
   textAddPomodoroBtn: {
     color: 'white',

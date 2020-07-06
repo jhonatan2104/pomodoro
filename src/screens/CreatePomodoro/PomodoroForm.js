@@ -1,8 +1,8 @@
 /* eslint-disable object-curly-newline */
 import React from 'react';
-import { TextInput, TouchableOpacity, Text } from 'react-native';
+import { TextInput, Text } from 'react-native';
 import { Formik, ErrorMessage } from 'formik';
-import { Box } from '../../components';
+import { Box, Button } from '../../components';
 import validationSchema from './verifications';
 import styles from './styles';
 
@@ -158,13 +158,15 @@ export default function PomodoroForm() {
               )}
             />
 
-            <TouchableOpacity
-              style={styles.AddPomodoroBtn}
+            <Button
+              mode="light"
+              width={160}
               onPress={props.handleSubmit}
-              activeOpacity={0.7}
+              paddingHorizontal={24}
+              style={styles.addPomodoroBtn}
             >
-              <Text style={styles.textAddPomodoroBtn}>Save pomodoro</Text>
-            </TouchableOpacity>
+              <Text>Save Pomodoro</Text>
+            </Button>
           </Box>
         )}
       </Formik>

@@ -9,10 +9,16 @@ export const StyledInput = styled.TextInput`
   border-radius: ${({ borderRadius }) => {
     return `${borderRadius}px`;
   }};
+  margin-left: ${({ marginLeft }) => {
+    return String(marginLeft).includes('%') ? marginLeft : `${marginLeft}px`;
+  }};
+  margin-top: ${({ marginTop }) => {
+    return String(marginTop).includes('%') ? marginTop : `${marginTop}px`;
+  }};
   padding: ${({ padding }) => {
     return `${padding}px`;
   }};
   width: ${({ width }) => {
-    return `${width}px`;
+    return String(width).includes('%') ? width : `${width}px`;
   }};
 `;

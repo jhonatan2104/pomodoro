@@ -6,22 +6,10 @@ const styles = StyleSheet.create({
     bottom: 8,
     alignSelf: 'center',
   },
-  textAddPomodoroBtn: {
-    color: 'white',
-  },
   capsule: {
     width: '100%',
     height: '100%',
     backgroundColor: '#2D2D2D',
-  },
-  inputName: {
-    color: 'white',
-    padding: 8,
-    fontSize: 18,
-    borderRadius: 6,
-    backgroundColor: '#46494D',
-    width: '80%',
-    marginLeft: '10%',
   },
   textName: {
     color: 'white',
@@ -40,24 +28,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginLeft: '20%',
     marginTop: 16,
-  },
-  workIntervalInputs: {
-    color: 'white',
-    backgroundColor: '#46494D',
-    padding: 8,
-    fontSize: 16,
-    borderRadius: 6,
-    width: 16,
-    marginLeft: '10%',
-  },
-  cicleIntervalInput: {
-    color: 'white',
-    backgroundColor: '#46494D',
-    padding: 8,
-    fontSize: 16,
-    borderRadius: 6,
-    width: 48,
-    marginLeft: '10%',
   },
   textMessageError: {
     marginLeft: '10%',

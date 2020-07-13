@@ -1,6 +1,6 @@
 /* eslint-disable object-curly-newline */
 import React from 'react';
-import { TextInput, Text } from 'react-native';
+import { Text } from 'react-native';
 import { Formik, ErrorMessage } from 'formik';
 import { Box, Button, Input } from '../../components';
 import validationSchema from './verifications';
@@ -29,8 +29,9 @@ export default function PomodoroForm() {
           <Box style={styles.capsule}>
             <Box style={{ width: '100%' }}>
               <Text style={styles.textName}>Name:</Text>
-              <TextInput
-                style={styles.inputName}
+              <Input
+                width="80%"
+                marginLeft="10%"
                 onChangeText={props.handleChange('name')}
               />
               <ErrorMessage
@@ -53,26 +54,30 @@ export default function PomodoroForm() {
 
             <Box>
               <Box style={{ flexDirection: 'row' }}>
-                <TextInput
-                  style={styles.workIntervalInputs}
+                <Input
+                  width={16}
+                  marginLeft="10%"
                   onChangeText={props.handleChange('workIntervalMin')}
                   keyboardType="numeric"
                   placeholder="Min"
                 />
-                <TextInput
-                  style={styles.workIntervalInputs}
+                <Input
+                  width={16}
+                  marginLeft="10%"
                   onChangeText={props.handleChange('workIntervalSec')}
                   keyboardType="numeric"
                   placeholder="Sec"
                 />
-                <TextInput
-                  style={styles.workIntervalInputs}
+                <Input
+                  width={16}
+                  marginLeft="10%"
                   onChangeText={props.handleChange('shortIntervalMin')}
                   keyboardType="numeric"
                   placeholder="Min"
                 />
-                <TextInput
-                  style={styles.workIntervalInputs}
+                <Input
+                  width={16}
+                  marginLeft="10%"
                   onChangeText={props.handleChange('shortIntervalSec')}
                   keyboardType="numeric"
                   placeholder="Sec"
@@ -89,9 +94,7 @@ export default function PomodoroForm() {
             <ErrorMessage
               name="workIntervalSec"
               render={(messageError) => (
-                <Text style={{ marginLeft: '10%', color: 'red' }}>
-                  {messageError}
-                </Text>
+                <Text style={styles.textMessageError}>{messageError}</Text>
               )}
             />
             <ErrorMessage
@@ -119,22 +122,26 @@ export default function PomodoroForm() {
 
             <Box>
               <Box style={{ flexDirection: 'row' }}>
-                <TextInput
-                  style={styles.workIntervalInputs}
+                <Input
+                  width={16}
+                  marginLeft="10%"
                   onChangeText={props.handleChange('longIntervalMin')}
                   keyboardType="numeric"
                   placeholder="Min"
                 />
-                <TextInput
-                  style={styles.workIntervalInputs}
+                <Input
+                  width={16}
+                  marginLeft="10%"
                   onChangeText={props.handleChange('longIntervalSec')}
                   keyboardType="numeric"
                   placeholder="Sec"
                 />
-                <TextInput
-                  style={styles.cicleIntervalInput}
+                <Input
+                  width={48}
+                  marginLeft="10%"
                   onChangeText={props.handleChange('cicleSize')}
                   keyboardType="numeric"
+                  placeholder="Sec"
                 />
               </Box>
             </Box>
@@ -157,8 +164,6 @@ export default function PomodoroForm() {
                 <Text style={styles.textMessageError}>{messageError}</Text>
               )}
             />
-
-            <Input />
 
             <Button
               mode="light"

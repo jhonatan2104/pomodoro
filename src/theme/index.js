@@ -26,6 +26,13 @@ export default {
         color: '#fff',
       },
     },
+    input: {
+      width: 80,
+      bgColor: '#46494D',
+      fontSize: 16,
+      textColor: '#fff',
+      padding: 8,
+    },
   },
   roundness: {
     xs: 4,

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledInput } from './styles';
+import theme from '~/theme';
 
 const Input = (props) => {
   return <StyledInput {...props} />;
@@ -19,14 +20,14 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-  width: 80,
-  backgroundoColor: '#46494D',
-  fontSize: 16,
-  color: '#fff',
-  borderRadius: 8,
+  width: theme.colors.input.width,
+  backgroundoColor: theme.colors.input.bgColor,
+  fontSize: theme.colors.input.fontSize,
+  color: theme.colors.input.textColor,
+  borderRadius: theme.roundness.sm,
   marginLeft: 0,
   marginTop: 0,
-  padding: 8,
+  padding: theme.colors.input.padding,
   onChangeText: null,
 };
 

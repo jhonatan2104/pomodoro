@@ -7,24 +7,24 @@ const Input = (props) => {
 };
 
 Input.propTypes = {
-  width: PropTypes.oneOf([PropTypes.number]),
-  backgroundoColor: PropTypes.oneOfType([PropTypes.string]),
-  fontSize: PropTypes.oneOf([PropTypes.number]),
-  color: PropTypes.oneOfType([PropTypes.string]),
-  borderRadius: PropTypes.oneOf([PropTypes.number]),
-  marginLeft: PropTypes.oneOf([PropTypes.number]),
-  marginRight: PropTypes.oneOf([PropTypes.number]),
-  padding: PropTypes.oneOf([PropTypes.number]),
+  width: PropTypes.number,
+  backgroundoColor: PropTypes.string,
+  fontSize: PropTypes.number,
+  color: PropTypes.string,
+  borderRadius: PropTypes.number,
+  marginLeft: PropTypes.number,
+  marginRight: PropTypes.number,
+  padding: PropTypes.number,
 };
 
 Input.defaultProps = {
-  width: '80px',
+  width: 80,
   backgroundoColor: '#46494D',
   fontSize: 18,
   color: '#fff',
   borderRadius: 8,
-  marginLeft: null,
-  marginRight: null,
+  marginLeft: 0,
+  marginRight: 0,
   padding: 8,
 };
 

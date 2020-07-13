@@ -55,7 +55,7 @@ const Routers = ({ theme }) => {
           },
         }}
       >
-        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Home" component={CreatePomodoro} />
         <Tab.Screen name="Time" component={Time} />
         <Tab.Screen name="Graphic" component={Graphic} />
         <Tab.Screen name="Tasks" component={Tasks} />

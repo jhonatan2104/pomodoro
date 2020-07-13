@@ -2,7 +2,7 @@
 import React from 'react';
 import { TextInput, Text } from 'react-native';
 import { Formik, ErrorMessage } from 'formik';
-import { Box, Button } from '../../components';
+import { Box, Button, Input } from '../../components';
 import validationSchema from './verifications';
 import styles from './styles';
 
@@ -157,6 +157,8 @@ export default function PomodoroForm() {
                 <Text style={styles.textMessageError}>{messageError}</Text>
               )}
             />
+
+            <Input />
 
             <Button
               mode="light"

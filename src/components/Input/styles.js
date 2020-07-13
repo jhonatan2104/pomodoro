@@ -2,12 +2,17 @@ import styled from 'styled-components/native';
 
 export const StyledInput = styled.TextInput`
   background-color: ${({ backgroundoColor }) => backgroundoColor};
-  font-size: ${({ fontSize }) => fontSize};
+  font-size: ${({ fontSize }) => {
+    return `${fontSize}px`;
+  }};
   color: ${({ color }) => color};
-  border-radius: ${({ borderRadius }) => borderRadius};
-  margin-left: ${({ marginLeft }) => marginLeft};
+  border-radius: ${({ borderRadius }) => {
+    return `${borderRadius}px`;
+  }};
   padding: ${({ padding }) => {
     return `${padding}px`;
   }};
-  width: ${({ width }) => width};
+  width: ${({ width }) => {
+    return `${width}px`;
+  }};
 `;

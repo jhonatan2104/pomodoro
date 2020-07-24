@@ -1,6 +1,7 @@
 module.exports = {
     "env": {
-        "es2020": true
+        "es2020": true,
+        "jest": true,
     },
     "extends": [
         "prettier",

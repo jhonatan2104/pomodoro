@@ -1,12 +1,25 @@
 /* eslint-disable object-curly-newline */
-import React from 'react';
+import React, { useCallback, useRef } from 'react';
 import { Text } from 'react-native';
 import { Formik, ErrorMessage } from 'formik';
 import { Box, Button, Input } from '../../components';
 import validationSchema from './verifications';
 import styles from './styles';
+import Storage from '~/services/storage';
+import { CREATE_POMODORO } from '~/services/storage/constants';
+import pomodoroParser from '~/utils/pomodoroParser';
 
 export default function PomodoroForm() {
+  const formRef = useRef(null);
+
+  const handleSubmit = useCallback(() => {
+    const pomodoro = pomodoroParser(formRef.current.values);
+    Storage.POST({
+      type: CREATE_POMODORO,
+      payload: { pomodoro },
+    });
+  }, [formRef]);
+
   return (
     <Box>
       <Formik
@@ -21,9 +34,8 @@ export default function PomodoroForm() {
           cicleSize: 4,
         }}
         validationSchema={validationSchema}
-        onSubmit={(values) => {
-          console.log(values);
-        }}
+        onSubmit={handleSubmit}
+        innerRef={formRef}
       >
         {(props) => (
           <Box style={styles.capsule}>

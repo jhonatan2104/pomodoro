@@ -1,127 +1,182 @@
+/* eslint-disable object-curly-newline */
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
-import {
-  TextInput,
-  View,
-  TouchableOpacity,
-  StyleSheet,
-  Text,
-} from 'react-native';
-
-import { Formik } from 'formik';
-
-const styles = StyleSheet.create({
-  AddPomodoroBtn: {
-    position: 'absolute',
-    alignSelf: 'center',
-    bottom: 8,
-    height: 16,
-    width: 160,
-    backgroundColor: '#6D7CFF',
-    justifyContent: 'center',
-    alignContent: 'center',
-    padding: 24,
-    borderRadius: 8,
-  },
-  textAddPomodoroBtn: {
-    color: 'white',
-  },
-  capsule: {
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#2D2D2D',
-  },
-  inputName: {
-    color: 'white',
-    padding: 8,
-    fontSize: 18,
-    borderRadius: 6,
-    backgroundColor: '#46494D',
-    width: '80%',
-    alignSelf: 'center',
-  },
-  textName: {
-    color: 'white',
-    fontSize: 16,
-    marginLeft: '10%',
-    marginTop: '20%',
-  },
-  textWorkInterval: {
-    color: 'white',
-    fontSize: 16,
-    marginLeft: '10%',
-    marginTop: 16,
-  },
-});
+import { Text } from 'react-native';
+import { Formik, ErrorMessage } from 'formik';
+import { Box, Button, Input } from '../../components';
+import validationSchema from './verifications';
+import styles from './styles';
 
 export default function PomodoroForm() {
   return (
-    <View>
+    <Box>
       <Formik
         initialValues={{
           name: '',
-          minWorkInterval: 25,
-          secWorkInterval: 0,
-          shortInterval: 5,
-          longInterval: 15,
+          workIntervalMin: 25,
+          workIntervalSec: 0,
+          shortIntervalMin: 5,
+          shortIntervalSec: 0,
+          longIntervalMin: 15,
+          longIntervalSec: 0,
           cicleSize: 4,
         }}
+        validationSchema={validationSchema}
         onSubmit={(values) => {
           console.log(values);
         }}
       >
         {(props) => (
-          <View style={styles.capsule}>
-            <View>
+          <Box style={styles.capsule}>
+            <Box style={{ width: '100%' }}>
               <Text style={styles.textName}>Name:</Text>
-              <TextInput
-                style={styles.inputName}
+              <Input
+                width="80%"
+                marginLeft="10%"
                 onChangeText={props.handleChange('name')}
               />
-            </View>
+              <ErrorMessage
+                name="name"
+                render={(messageError) => (
+                  <Text style={styles.textMessageError}>{messageError}</Text>
+                )}
+              />
+            </Box>
 
-            <View>
-              <Text style={styles.textWorkInterval}>Work Interval:</Text>
-              <View style={{ flexDirection: 'row' }}>
-                <TextInput
-                  style={{
-                    color: 'white',
-                    backgroundColor: '#46494D',
-                    padding: 8,
-                    fontSize: 18,
-                    borderRadius: 6,
-                    width: 16,
-                    marginLeft: '10%',
-                  }}
-                  onChangeText={props.handleChange('minWorkInterval')}
-                  keyboardType="numeric"
-                />
-                <TextInput
-                  style={{
-                    color: 'white',
-                    backgroundColor: '#46494D',
-                    padding: 8,
-                    fontSize: 18,
-                    borderRadius: 6,
-                    width: 48,
-                    marginLeft: 16,
-                  }}
-                  onChangeText={props.handleChange('secWorkInterval')}
-                  keyboardType="numeric"
-                />
-              </View>
-            </View>
-
-            <TouchableOpacity
-              style={styles.AddPomodoroBtn}
-              onPress={props.handleSubmit}
-              activeOpacity={0.7}
+            <Box
+              style={{
+                flexDirection: 'row',
+                width: '100%',
+              }}
             >
-              <Text style={styles.textAddPomodoroBtn}>Save pomodoro</Text>
-            </TouchableOpacity>
-          </View>
+              <Text style={styles.textWorkInterval}>Work Interval:</Text>
+              <Text style={styles.textShortInterval}>Short Interval:</Text>
+            </Box>
+
+            <Box>
+              <Box style={{ flexDirection: 'row' }}>
+                <Input
+                  width={16}
+                  marginLeft="10%"
+                  onChangeText={props.handleChange('workIntervalMin')}
+                  keyboardType="numeric"
+                  placeholder="Min"
+                />
+                <Input
+                  width={16}
+                  marginLeft="10%"
+                  onChangeText={props.handleChange('workIntervalSec')}
+                  keyboardType="numeric"
+                  placeholder="Sec"
+                />
+                <Input
+                  width={16}
+                  marginLeft="10%"
+                  onChangeText={props.handleChange('shortIntervalMin')}
+                  keyboardType="numeric"
+                  placeholder="Min"
+                />
+                <Input
+                  width={16}
+                  marginLeft="10%"
+                  onChangeText={props.handleChange('shortIntervalSec')}
+                  keyboardType="numeric"
+                  placeholder="Sec"
+                />
+              </Box>
+            </Box>
+
+            <ErrorMessage
+              name="workIntervalMin"
+              render={(messageError) => (
+                <Text style={styles.textMessageError}>{messageError}</Text>
+              )}
+            />
+            <ErrorMessage
+              name="workIntervalSec"
+              render={(messageError) => (
+                <Text style={styles.textMessageError}>{messageError}</Text>
+              )}
+            />
+            <ErrorMessage
+              name="shortIntervalMin"
+              render={(messageError) => (
+                <Text style={styles.textMessageError}>{messageError}</Text>
+              )}
+            />
+            <ErrorMessage
+              name="shortIntervalSec"
+              render={(messageError) => (
+                <Text style={styles.textMessageError}>{messageError}</Text>
+              )}
+            />
+
+            <Box
+              style={{
+                flexDirection: 'row',
+                width: '100%',
+              }}
+            >
+              <Text style={styles.textWorkInterval}>Long Interval:</Text>
+              <Text style={styles.textShortInterval}>Cicle Size:</Text>
+            </Box>
+
+            <Box>
+              <Box style={{ flexDirection: 'row' }}>
+                <Input
+                  width={16}
+                  marginLeft="10%"
+                  onChangeText={props.handleChange('longIntervalMin')}
+                  keyboardType="numeric"
+                  placeholder="Min"
+                />
+                <Input
+                  width={16}
+                  marginLeft="10%"
+                  onChangeText={props.handleChange('longIntervalSec')}
+                  keyboardType="numeric"
+                  placeholder="Sec"
+                />
+                <Input
+                  width={48}
+                  marginLeft="10%"
+                  onChangeText={props.handleChange('cicleSize')}
+                  keyboardType="numeric"
+                  placeholder="Sec"
+                />
+              </Box>
+            </Box>
+
+            <ErrorMessage
+              name="longIntervalMin"
+              render={(messageError) => (
+                <Text style={styles.textMessageError}>{messageError}</Text>
+              )}
+            />
+            <ErrorMessage
+              name="longIntervalSec"
+              render={(messageError) => (
+                <Text style={styles.textMessageError}>{messageError}</Text>
+              )}
+            />
+            <ErrorMessage
+              name="cicleSize"
+              render={(messageError) => (
+                <Text style={styles.textMessageError}>{messageError}</Text>
+              )}
+            />
+
+            <Button
+              mode="light"
+              width={160}
+              onPress={props.handleSubmit}
+              paddingHorizontal={24}
+              style={styles.addPomodoroBtn}
+            >
+              <Text>Save Pomodoro</Text>
+            </Button>
+          </Box>
         )}
       </Formik>
-    </View>
+    </Box>
   );
 }

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Pomodoro name",
+    "config": {
+      "focusSize": 20,
+      "cicleSize": 4,
+      "timeCount": 60
+    }
+  },
+  {
+    "name": "Pomodoro name",
+    "config": {
+      "focusSize": 20,
+      "cicleSize": 4,
+      "timeCount": 60
+    }
+  },
+  {
+    "name": "Pomodoro name",
+    "config": {
+      "focusSize": 20,
+      "cicleSize": 4,
+      "timeCount": 60
+    }
+  },
+  {
+    "name": "Pomodoro name",
+    "config": {
+      "focusSize": 20,
+      "cicleSize": 4,
+      "timeCount": 60
+    }
+  },
+  {
+    "name": "Pomodoro name",
+    "config": {
+      "focusSize": 20,
+      "cicleSize": 4,
+      "timeCount": 60
+    }
+  },
+  {
+    "name": "Pomodoro name",
+    "config": {
+      "focusSize": 20,
+      "cicleSize": 4,
+      "timeCount": 60
+    }
+  }
+]

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { StatusBar, View } from 'react-native';
 import PomodoroForm from './PomodoroForm';
 
 // import { Container } from './styles';
@@ -7,6 +7,7 @@ import PomodoroForm from './PomodoroForm';
 const CreatePomodoro = () => {
   return (
     <View>
+      <StatusBar translucent barStyle="light-content" />
       <PomodoroForm />
     </View>
   );

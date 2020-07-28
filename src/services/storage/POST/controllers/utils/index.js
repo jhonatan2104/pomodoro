@@ -4,8 +4,8 @@ export const validationPropConfig = (config) => {
   if (config instanceof Object) {
     const propsValid = [
       config.hasOwnProperty('duration'),
-      config.hasOwnProperty('long_inteval'),
-      config.hasOwnProperty('short_inteval'),
+      config.hasOwnProperty('long_interval'),
+      config.hasOwnProperty('short_interval'),
       config.hasOwnProperty('cicle_size'),
     ];
 
@@ -19,8 +19,8 @@ export const validationPropPomodoro = (pomodoro) => {
     const propsValid = [
       pomodoro.hasOwnProperty('name'),
       pomodoro.hasOwnProperty('config'),
-      pomodoro.hasOwnProperty('log'),
-      pomodoro.hasOwnProperty('icon'),
+      // pomodoro.hasOwnProperty('log'),
+      // pomodoro.hasOwnProperty('icon'),
       validationPropConfig(pomodoro.config),
     ];
 

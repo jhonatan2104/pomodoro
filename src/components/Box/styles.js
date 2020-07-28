@@ -127,6 +127,14 @@ export const Container = styled.View`
   }}
 
   ${({ height }) => {
+    if (String(height).includes('%')) {
+      return (
+        !!height &&
+        css`
+          height: ${height};
+        `
+      );
+    }
     return (
       !!height &&
       css`
@@ -136,6 +144,14 @@ export const Container = styled.View`
   }}
 
   ${({ width }) => {
+    if (String(width).includes('%')) {
+      return (
+        !!width &&
+        css`
+          width: ${width};
+        `
+      );
+    }
     return (
       !!width &&
       css`

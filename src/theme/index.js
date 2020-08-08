@@ -46,4 +46,10 @@ export default {
     md: 22,
     lg: 32,
   },
+  input: {
+    width: 80,
+    height: 55,
+    fontSize: 16,
+    padding: 8,
+  },
 };

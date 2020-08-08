@@ -21,4 +21,8 @@ export const StyledInput = styled.TextInput`
   width: ${({ width }) => {
     return String(width).includes('%') ? width : `${width}px`;
   }};
+
+  height: ${({ height }) => {
+    return String(height).includes('%') ? height : `${height}px`;
+  }};
 `;

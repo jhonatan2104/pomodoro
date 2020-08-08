@@ -9,6 +9,7 @@ const Input = (props) => {
 
 Input.propTypes = {
   width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  height: PropTypes.number,
   backgroundoColor: PropTypes.string,
   fontSize: PropTypes.number,
   color: PropTypes.string,
@@ -21,6 +22,7 @@ Input.propTypes = {
 
 Input.defaultProps = {
   width: theme.colors.input.width,
+  height: theme.input.height,
   backgroundoColor: theme.colors.input.bgColor,
   fontSize: theme.colors.input.fontSize,
   color: theme.colors.input.textColor,
